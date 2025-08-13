@@ -83,8 +83,6 @@ const CONFIG = {
     'Laravel',
     'JavaScript',
     'React.js',
-    'Node.js',
-    'Nest.js',
     'MySQL',
     'PostgreSQL',
     'Git',
