@@ -1,9 +1,6 @@
 // src/components/blog-card/index.tsx
 import React from 'react';
 
-// เส้นทางอ้างอิงถึง config จากตำแหน่งนี้ (../.. = กลับไป src, ../../.. = กลับไป root)
-import CONFIG from '../../../gitprofile.config';
-
 type MediaItem = {
   title: string;
   description?: string;
@@ -11,22 +8,22 @@ type MediaItem = {
   link?: string;
 };
 
-// รองรับ signature เดิม (มี props เข้ามา) แต่จะไม่ใช้ เพื่อลดการแก้ที่อื่น
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const BlogCard: React.FC<{
+type Props = {
   loading?: boolean;
-  blog?: unknown;
+  blog?: any;              // รับค่าจาก sanitized config (เราใช้ blog.items ของเราเอง)
   googleAnalyticsId?: string;
-}> = () => {
-  const blog: any = (CONFIG as any).blog || {};
-  const items: MediaItem[] = Array.isArray(blog.items) ? blog.items : [];
+};
 
-  // ถ้าไม่มีรายการ ก็ไม่แสดงอะไร (ซ่อน section นี้)
+const BlogCard: React.FC<Props> = ({ blog }) => {
+  const header: string = blog?.header ?? 'My Articles';
+  const items: MediaItem[] = Array.isArray(blog?.items) ? blog.items : [];
+
+  // ถ้าไม่มี items ให้ซ่อนทั้งเซกชัน (กลับไปที่คอมโพเนนต์แม่จะจัดการ)
   if (!items.length) return null;
 
   return (
     <div className="grid md:grid-cols-2 gap-5">
-      {items.map((it, idx) => {
+      {items.map((it: MediaItem, idx: number) => {
         const Wrapper: React.ElementType = it.link ? 'a' : 'div';
         const wrapperProps = it.link
           ? { href: it.link, target: '_blank', rel: 'noreferrer' }
@@ -39,7 +36,6 @@ const BlogCard: React.FC<{
             className="card bg-base-200 hover:bg-base-300 transition-colors shadow-md"
           >
             <div className="card-body flex gap-4 items-center">
-              {/* รูปปก */}
               {it.imageUrl ? (
                 <img
                   src={it.imageUrl}
@@ -53,7 +49,6 @@ const BlogCard: React.FC<{
                 </div>
               )}
 
-              {/* เนื้อหา */}
               <div>
                 <h3 className="card-title text-base">{it.title}</h3>
                 {it.description ? (
