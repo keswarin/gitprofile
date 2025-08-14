@@ -135,11 +135,36 @@ const CONFIG = {
     },
   ],
   // Display articles from your medium or dev account. (Optional)
-  blog: {
-    source: 'dev', // medium | dev
-    username: 'arifszn', // to hide blog section, keep it empty
-    limit: 2, // How many articles to display. Max is 10.
-  },
+blog: {
+  header: 'Podcasts, Music & Videos I Love',
+  items: [
+    {
+      title: '🎧 Design Better Podcast',
+      description: 'คุยกับดีไซเนอร์ระดับโลก เรื่อง UX, DesignOps, และการทำงานจริง',
+      imageUrl: 'https://img.youtube.com/vi/2gq8GfQ9t4M/hqdefault.jpg',
+      link: 'https://open.spotify.com/show/ลิงก์จริง',
+    },
+    {
+      title: '🎙️ Darknet Diaries',
+      description: 'เรื่องเล่าด้านความปลอดภัยไซเบอร์ ฟังง่าย ลุ้นเหมือนสารคดี',
+      imageUrl: 'https://img.youtube.com/vi/6Yx-g5mQv2E/hqdefault.jpg',
+      link: 'https://open.spotify.com/show/ลิงก์จริง',
+    },
+    {
+      title: '🎵 My Focus Playlist',
+      description: 'เพลงที่ฟังเวลาทำงาน ออกแบบ และเขียนโค้ด',
+      imageUrl: 'https://i.imgur.com/8N0mQyB.png',
+      link: 'https://open.spotify.com/playlist/ลิงก์จริง',
+    },
+    {
+      title: '▶️ Don Norman on UX',
+      description: 'วิดีโอสั้น ๆ ว่าทำไม UX สำคัญกับธุรกิจ',
+      imageUrl: 'https://img.youtube.com/vi/2gq8GfQ9t4M/hqdefault.jpg',
+      link: 'https://www.youtube.com/watch?v=2gq8GfQ9t4M',
+    },
+  ],
+},
+
   googleAnalytics: {
     id: '', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
   },
