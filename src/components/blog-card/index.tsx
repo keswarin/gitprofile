@@ -51,7 +51,6 @@ const BlogCard: React.FC<Props> = ({ blog }) => {
                   🎧
                 </div>
               )}
-
               {/* เนื้อหา */}
               <div>
                 <h3 className="card-title text-base">{it.title}</h3>
