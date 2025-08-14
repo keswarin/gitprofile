@@ -15,7 +15,7 @@ type Props = {
 };
 
 const BlogCard: React.FC<Props> = ({ blog }) => {
-  const header: string = blog?.header ?? 'My Articles';
+  //const header: string = blog?.header ?? 'My Articles';
   const items: MediaItem[] = Array.isArray(blog?.items) ? blog.items : [];
 
   // ถ้าไม่มี items ให้ซ่อนทั้งเซกชัน (กลับไปที่คอมโพเนนต์แม่จะจัดการ)
