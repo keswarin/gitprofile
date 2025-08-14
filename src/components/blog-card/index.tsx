@@ -1,4 +1,3 @@
-// src/components/blog-card/index.tsx
 import React from 'react';
 
 type MediaItem = {
@@ -8,15 +7,20 @@ type MediaItem = {
   link?: string;
 };
 
+type BlogSection = {
+  header: string;
+  items: MediaItem[];
+};
+
 type Props = {
   loading?: boolean;
-  blog?: any;                 // <-- รับแบบ any เพื่อให้เข้ากับ SanitizedBlog เดิมได้
+  blog?: BlogSection;
   googleAnalyticsId?: string;
 };
 
 const BlogCard: React.FC<Props> = ({ blog }) => {
   const header: string | undefined = blog?.header;
-  const items: MediaItem[] = Array.isArray(blog?.items) ? (blog.items as MediaItem[]) : [];
+  const items: MediaItem[] = Array.isArray(blog?.items) ? blog!.items : [];
 
   // ถ้าไม่มีรายการ ก็ซ่อนทั้งส่วน
   if (!items.length) return null;
