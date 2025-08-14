@@ -10,20 +10,22 @@ type MediaItem = {
 
 type Props = {
   loading?: boolean;
-  blog?: any;              // รับค่าจาก sanitized config (เราใช้ blog.items ของเราเอง)
+  blog?: {
+    header?: string;
+    items?: MediaItem[];
+  };
   googleAnalyticsId?: string;
 };
 
 const BlogCard: React.FC<Props> = ({ blog }) => {
-  //const header: string = blog?.header ?? 'My Articles';
-  const items: MediaItem[] = Array.isArray(blog?.items) ? blog.items : [];
+  const items: MediaItem[] = Array.isArray(blog?.items) ? (blog!.items as MediaItem[]) : [];
 
-  // ถ้าไม่มี items ให้ซ่อนทั้งเซกชัน (กลับไปที่คอมโพเนนต์แม่จะจัดการ)
+  // ถ้าไม่มีรายการ ให้ซ่อนทั้งส่วน
   if (!items.length) return null;
 
   return (
     <div className="grid md:grid-cols-2 gap-5">
-      {items.map((it: MediaItem, idx: number) => {
+      {items.map((it, idx) => {
         const Wrapper: React.ElementType = it.link ? 'a' : 'div';
         const wrapperProps = it.link
           ? { href: it.link, target: '_blank', rel: 'noreferrer' }
@@ -36,6 +38,7 @@ const BlogCard: React.FC<Props> = ({ blog }) => {
             className="card bg-base-200 hover:bg-base-300 transition-colors shadow-md"
           >
             <div className="card-body flex gap-4 items-center">
+              {/* รูปปก */}
               {it.imageUrl ? (
                 <img
                   src={it.imageUrl}
@@ -49,6 +52,7 @@ const BlogCard: React.FC<Props> = ({ blog }) => {
                 </div>
               )}
 
+              {/* เนื้อหา */}
               <div>
                 <h3 className="card-title text-base">{it.title}</h3>
                 {it.description ? (
