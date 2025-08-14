@@ -28,52 +28,28 @@ const CONFIG = {
         projects: ['arifszn/gitprofile', 'arifszn/pandora'], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
       },
     },
-external: {
-  header: 'Podcasts, Music & Videos I Love',
-  projects: [
-    // --- Podcasts ---
-    {
-      title: '🎧 Design Better Podcast',
-      description: 'คุยกับดีไซเนอร์ระดับโลก เรื่อง UX, DesignOps, และการทำงานจริง',
-      imageUrl: 'https://i.imgur.com/3yqXzjU.png',
-      link: 'https://open.spotify.com/show/2v6Qh2...', // ลิงก์ Spotify/Apple Podcasts
+    external: {
+      header: 'My Projects',
+      // To hide the External Projects section, keep it empty.
+      projects: [
+        {
+          title: 'ระบบบริการรถรางอัจฉริยะ ในมหาวิทยาลัยราชภัฎเชียงใหม่ ศูนย์แม่ริม',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
+          imageUrl:
+            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
+          link: 'https://example.com',
+        },
+        {
+          title: 'Project Name',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
+          imageUrl:
+            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
+          link: 'https://example.com',
+        },
+      ],
     },
-    {
-      title: '🎙️ Darknet Diaries',
-      description: 'เรื่องเล่าด้านความปลอดภัยไซเบอร์ ฟังง่าย ลุ้นเหมือนสารคดี',
-      imageUrl: 'https://i.imgur.com/1k6gM0n.png',
-      link: 'https://open.spotify.com/show/2H8VN9...',
-    },
-
-    // --- Music ---
-    {
-      title: '🎵 My Focus Playlist',
-      description: 'เพลงที่ฟังเวลาทำงาน ออกแบบ และเขียนโค้ด',
-      imageUrl: 'https://i.imgur.com/8N0mQyB.png',
-      link: 'https://open.spotify.com/playlist/37i9dQZF1DX4sWSpwq3LiO',
-    },
-    {
-      title: '🎶 Weightless',
-      description: 'Ambient ช่วยโฟกัสและผ่อนคลาย',
-      imageUrl: 'https://i.imgur.com/Zv3N0wL.png',
-      link: 'https://open.spotify.com/track/xyz...',
-    },
-
-    // --- Videos ---
-    {
-      title: '▶️ Don Norman on UX',
-      description: 'วิดีโอสั้น ๆ ว่าทำไม UX สำคัญกับธุรกิจ',
-      imageUrl: 'https://img.youtube.com/vi/2gq8GfQ9t4M/hqdefault.jpg',
-      link: 'https://www.youtube.com/watch?v=2gq8GfQ9t4M',
-    },
-    {
-      title: '▶️ Figma Auto Layout Tips',
-      description: 'เทคนิค Auto Layout สำหรับโปรโตไทป์ไว ๆ',
-      imageUrl: 'https://img.youtube.com/vi/6Yx-g5mQv2E/hqdefault.jpg',
-      link: 'https://www.youtube.com/watch?v=6Yx-g5mQv2E',
-    },
-  ],
-},
   },
   seo: { title: 'Portfolio of Ariful Alam', description: '', imageURL: '' },
   social: {
@@ -84,7 +60,7 @@ external: {
   },
   resume: {
     fileUrl:
-      'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', // Empty fileUrl will hide the `Download Resume` button.
+      'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', // Empty fileUrl will hide the Download Resume button.
   },
   skills: [
     'PHP',
@@ -225,11 +201,11 @@ external: {
   },
 
   // Optional Footer. Supports plain text or HTML.
-  footer: `Made with <a 
+  footer: Made with <a 
       class="text-primary" href="https://github.com/arifszn/gitprofile"
       target="_blank"
       rel="noreferrer"
-    >GitProfile</a> and ❤️`,
+    >GitProfile</a> and ❤️,
 
   enablePWA: true,
 };
