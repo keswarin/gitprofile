@@ -1,4 +1,3 @@
-// gitprofile.config.ts
 const CONFIG = {
   github: {
     username: 'keswarin', // GitHub username
